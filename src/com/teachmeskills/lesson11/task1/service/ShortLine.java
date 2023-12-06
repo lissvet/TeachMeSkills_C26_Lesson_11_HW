@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class ShortLine {
 
-    public static void findShortestWord(){
+    public static void findShortestLongerWord(){
         Scanner scan = new Scanner(System.in);
         System.out.println("Enter arbitrary string divided into words: ");
         String string = scan.nextLine();
@@ -31,6 +31,29 @@ public class ShortLine {
         }
 
         System.out.println("Shortest word(s) in a line: " + result);
+
+        for (int i = 1; i < stringArray.length; i++) {
+            if (stringArray[0].length() < stringArray[i].length()) {
+                String array0 = stringArray[0];
+                stringArray[0] = stringArray[i];
+                stringArray[i] = array0;
+            }
+        }
+
+        StringBuilder resultLong = new StringBuilder();
+        resultLong.append("\"");
+        resultLong.append(stringArray[0]);
+        resultLong.append("\"");
+
+        for (int i = 1; i < stringArray.length; i++) {
+            if (stringArray[0].length() == stringArray[i].length()) {
+                result.append(" and \"");
+                result.append(stringArray[i]);
+                result.append("\"");
+            }
+        }
+
+        System.out.println("Longest word(s) in a line: " + resultLong);
     }
 
 }

@@ -9,7 +9,7 @@ import com.teachmeskills.lesson11.task1.service.ShortLine;
 public class Runner {
 
     public static void main(String[] args) {
-        ShortLine.findShortestWord();
+        ShortLine.findShortestLongerWord();
     }
 
 }
